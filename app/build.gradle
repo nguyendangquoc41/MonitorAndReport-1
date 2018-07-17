@@ -1,0 +1,55 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8' // LoganSquare Json
+    }
+}
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion '27.0.3'
+    defaultConfig {
+        applicationId "com.example.mjho1.monitorandreport"
+        minSdkVersion 17
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        renderscriptTargetApi 25
+        renderscriptSupportModeEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+
+    implementation "com.android.support:appcompat-v7:25.4.0"
+    implementation "com.android.support:recyclerview-v7:25.4.0" // Recycler view
+    implementation 'org.greenrobot:eventbus:3.1.1' // EventBus
+    implementation 'com.android.support:support-v4:25.4.0'
+    annotationProcessor 'com.bluelinelabs:logansquare-compiler:1.3.6' // LoganSquare Json
+    implementation 'com.bluelinelabs:logansquare:1.3.6' // LoganSquare Json
+    implementation 'com.google.code.gson:gson:2.8.5' // GSON
+    implementation 'br.com.simplepass:loading-button-android:1.6.5' // Button decoration
+    implementation 'org.apache.commons:commons-lang3:3.2' // StringUtils
+    implementation 'com.android.support:cardview-v7:25.4.0' // Card view
+    implementation('io.socket:socket.io-client:1.0.0') {
+        // excluding org.json which is provided by Android
+        exclude group: 'org.json', module: 'json'
+    } // Socket.io
+    implementation 'com.android.support:design:25.4.0' // Slide menu and more...
+}

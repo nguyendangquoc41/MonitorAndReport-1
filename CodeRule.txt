@@ -1,0 +1,10 @@
+--- Log tag code ---
+'UI - '+ '*' : Cho truong hop chinh sua UI
+vidu chinh sua menu: 'UI - Menu'
+'* - '+'Request' : Cho truong hop request service
+vidu request login: 'Login - Request'
+'* - '+'Receive' : Cho truong hop lang nghe tin nhan tra ve
+vidu lang nghe login: 'Login - Receive'
+--- Key code ---
+'Key 1: Login' : Cho truong hop login
+'Key 2: MarketInfo' : Cho truong hop request MKT info
